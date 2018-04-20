@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,9 +28,14 @@ public class CustomAttributesConfig {
     private String icp="2018 湘ICP备17010933号-1";
 
     // 打赏二维码
-    private List<String> rewardImages;
+    private List<String> rewardImages=new ArrayList<>();
+
+    public CustomAttributesConfig() {
+        rewardImages.add("/image/wxds.JPG");
+        rewardImages.add(("/image/zfb.JPG"));
+    }
 
     // 打赏描述
-    private String rewardDesc="";
+    private String rewardDesc="原创不易,请支持一下吧";
 
 }

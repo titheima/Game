@@ -58,14 +58,23 @@ docker-compose up
 ```
 
 <1>首次部署当前程序需要在对应的文件夹中执行以下命令
-a.启动程序 nohup java -jar im.jar & 
-b.退出 ctrl + c 
+
+a.启动程序 nohup java -jar im.jar &
+
+b.退出 ctrl + c
+
 c.查看日志 tail -500f nohup.out
+
 <2>非首次部署当前程序需要在对应的文件夹中执行以下命令
+
 a.捕获上一个版本程序的进程 ps - ef|grep im.jar 
+
 b.杀死对应的进程 kill 进程号 
+
 c.启动程序 nohup java -jar im.jar & 
+
 d.退出 ctrl + c 
+
 e.查看日志 tail -500f nohup.out
 
 #### 联系作者
