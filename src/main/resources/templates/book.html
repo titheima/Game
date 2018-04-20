@@ -1,0 +1,1951 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>书架</title>
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/css/mdb.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/toastr.css" rel="stylesheet">
+</head>
+
+<body class="creative-lp">
+
+<header>
+
+    <!-- 顶部导航 -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar white">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold title" href="/">anymk</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-align-justify" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="list-unstyled navbar-nav mr-auto">
+                    <li class="nav-item ml-4">
+                        <a class="nav-link title" href="/" data-offset="90">主页</a>
+                    </li>
+
+                    <li class="nav-item ml-4">
+                        <a class="nav-link title" href="/blog" data-offset="90">博客</a>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link title" href="/book" data-offset="90">书架</a>
+                    </li>
+                    <li class="nav-item dropdown ml-4">
+                        <a class="nav-link dropdown-toggle title" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">场景 </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/app/chat">即时通信</a>
+                            <a class="dropdown-item" href="/app/live">直播弹幕</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-4">
+                        <a class="nav-link title" href="/cncf" data-offset="90">Cloud Native</a>
+                    </li>
+                    <!--<li class="nav-item ml-4">-->
+                    <!--<a class="nav-link title" href="/about" data-offset="90">关于</a>-->
+                    <!--</li>-->
+                </ul>
+                <!-- Social Icon  -->
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item ml-3">
+                        <a class="btn pink-gradient btn-rounded btn-sm font-weight-bold" href="/login" data-offset="90">登录/注册</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+<!-- Intro Section -->
+<div class="view jarallax" data-jarallax='{"speed": 0.2}'
+     style="background-image: url(https://upload-images.jianshu.io/upload_images/3424642-339514044862989c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240);">
+    <div class="full-bg-img">
+        <div class="mask rgba-black-light">
+            <div class="container flex-center">
+                <div class="row pt-5 mt-3">
+                    <div class="col-md-12 wow fadeIn mb-3">
+                        <div class="text-center white-text">
+                            <ul class="list-unstyled ">
+                                <li>
+                                    <h4 class="display-4 mt-md-5 mt-md-0 mb-5 font-weight-bold white-text wow fadeIn"
+                                        data-wow-delay="0.3s">
+                                        <strong>一封简信，呈上！</strong>
+                                    </h4>
+                                <li>
+                                    <h5 class="white-text description mb-5 wow fadeIn" data-wow-delay="0.4s"><p>
+                                        读者，您好！</p>
+                                        <p>电子书是为了您更好的利用电子设备进行学习，支持作者，请购买正版纸质书籍！</p>
+                                        <p>作者，您好！</p>
+                                        <p>书架所有资源均来自互联网或热心网友分享，若对您的权益造成影响，请联系我们及时删除。</p>
+                                    </h5>
+                                </li>
+                                <li class="wow fadeIn" data-wow-delay="0.4s">
+                                    <a class="btn pink-gradient btn-rounded btn-lg font-weight-bold"  data-toggle="modal" data-target="#shareModal">共享书籍</a>
+                                    <a class="btn pink-gradient btn-rounded btn-lg font-weight-bold" href="/#contract">联系我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Intro-->
+
+<!-- /.Main Container -->
+<div class="container">
+    <div class="row pt-4">
+
+        <!-- Content -->
+        <div class="col-lg-12">
+
+            <!-- Books Grid -->
+            <section class="section pt-4">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img13.360buyimg.com/n1/s200x200_jfs/t6130/167/771989293/235186/608d0264/592bf167Naf49f7f6.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">深入理解Java虚拟机-第二版</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5df6LcB" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11252778.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n7/jfs/t2533/137/959910423/22966/43ff2436/5676c634N4a3649bc.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Netty In Action</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">English</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5BpkGXq" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/19667528.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n7/jfs/t3187/19/2042531756/134919/ab523102/57d8bbb9N20fa7c06.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">SRE Google运维解密</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5j8taxY" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/10677549451.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n1/s200x200_jfs/t3205/19/2184781058/584838/c74f70c3/57ddfd34N7a86eaad.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">DevOps实践</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/53diVcf" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12035906.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img14.360buyimg.com/n1/s200x200_jfs/t1126/308/340747656/284160/e463bedb/552335e1Nf4190fdd.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Java 8函数式编程</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5LGywea" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11673259.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n1/s200x200_jfs/t994/16/1380883761/496574/1c736b5a/5595f8d4N11d0f10a.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">MySQL技术内幕-第5版</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5jlti7E" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11720091.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img14.360buyimg.com/n1/s200x200_jfs/t4483/332/2284794111/122812/4bf353/58ed7f42Nf16d6b20.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Spring Cloud微服务实战</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5kYU0W7" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12172344.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img13.360buyimg.com/n1/s200x200_jfs/t5836/86/5210598312/322369/61bdaa66/595c7d8aN41ecd699.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">区块链开发指南</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5O7VYww" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12114753.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_jfs/t3310/143/1379472768/437459/d9d8bd99/582435faN7c9dd621.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">深入理解计算机系统-第三版</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5P4I7M0" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12006637.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n1/s200x200_g13/M06/02/03/rBEhU1Ht4ncIAAAAAAJORcwL2lkAABTsgCyCwUAAk5d496.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Go语言圣经</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5ijS6Kx" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n1/s200x200_17173/c3f6016e-fd9e-45a7-95bb-8a981c3d3f93.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">大话设计模式</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5khudOU" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/10079261.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img14.360buyimg.com/n1/s200x200_jfs/t1312/364/1104231705/156699/523dc84c/55b87a5eN09430825.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Java并发编程的艺术</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/56qqOyQ" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11740734.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img10.360buyimg.com/n1/s200x200_jfs/t5725/76/9599356914/214189/e4f1192d/59883860Nbe600fdf.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Kubernetes权威指南-第二版</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/50Hd6WZ" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12230380.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n1/s200x200_jfs/t18022/45/130207662/112515/34357812/5a5ee468Nea8ca9b9.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Docker-实践</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5qbtBd6" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_g13/M05/09/07/rBEhU1NcwksIAAAAAABLiG3aNDgAAMg9AAQ7QIAAEug137.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Spring-Secutity-5.0.3</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">English</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5XK8rGj" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_jfs/t8872/125/826808789/116421/7dbdfe84/59afa7beN3e8ee4f3.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">程序员的数学-概率统计</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5JWi3lg" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11771007.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img13.360buyimg.com/n1/s200x200_jfs/t2647/106/945390436/59393/57d368ae/572c63b3N1108edd7.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">程序员的数学</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5eOQk0m" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/10330934438.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img13.360buyimg.com/n1/s200x200_jfs/t8245/119/1352693803/230218/9006c05c/59b8dcfeN8c14a8b6.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">程序员的数学-线性代数</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5KYLKRK" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11891058.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img14.360buyimg.com/n7/jfs/t14323/321/494377413/147135/9976c223/5a2f119cNa499ae04.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">分布式系统原理与范型</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5OOZjpC" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/25039597179.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img13.360buyimg.com/n1/s200x200_jfs/t3280/86/5087355853/237042/afc7a787/5865baa8N2acc0af2.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">精通Spring-4.x企业应用开发实战</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5xVIuEj" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12100408.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img11.360buyimg.com/n1/s200x200_jfs/t5881/245/3369654271/326099/6da3ba73/593a4357N46699934.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">代码整洁之道</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5MbxyWc" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/24933703101.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_g14/M0A/0C/0A/rBEhVlLPpKIIAAAAAAN1DjSyxdkAAH5kwCwKbMAA3Um488.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Nodejs开发指南</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/533Sryf" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img14.360buyimg.com/n1/s200x200_jfs/t3097/312/5348503911/78446/9a3f7c83/586b2f41N1f98b7cb.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">图解TCP_IP</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5v00YCq" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11216906209.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_jfs/t6439/92/490417530/198884/3856b75/59408659N77e984ce.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">机器学习实战</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5A1vnDy" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11242112.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_jfs/t3388/358/1413961218/237200/a2967a63/58256380N773ffe78.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">区块链技术指南</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5fExR03" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12007317.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img10.360buyimg.com/n1/s200x200_jfs/t3244/19/4701748027/371568/973000db/585358ebN2d6b6a66.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">图解设计模式</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5EtVMto" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/12019365.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img14.360buyimg.com/n1/s200x200_jfs/t16138/350/2448586464/21368/706b33c8/5ab0c3d6N21be30bd.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">写给大家看的算法书</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5008HMQ" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/26398838264.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_jfs/t535/313/495218117/815050/9be8097a/546b1647N4326ba2c.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">数学之美-第2版</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5xZwTxx" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/11572052.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card card-ecommerce">
+
+                            <!--Card image-->
+                            <div class="view overlay pt-3">
+                                <img src="https://img12.360buyimg.com/n1/s200x200_jfs/t7606/81/2832596557/70543/f59f9737/59b5f466N92afac01.jpg" class="mx-auto d-block" alt="" style="max-height: 200px;">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <!--Card image-->
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Category & Title-->
+
+                                <h5 class="card-title mb-1">
+                                    <strong>
+                                        <a href="" class="dark-grey-text">Head-First设计模式</a>
+                                    </strong>
+                                </h5>
+                                <span class="badge badge-info mb-2">中文</span>
+                                <!-- Rating -->
+                                <ul class="rating">
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star blue-text"></i>
+                                    </li>
+                                </ul>
+
+                                <!--Card footer-->
+                                <div class="card-footer pb-0">
+                                    <div class="row mb-0">
+                                        <a href="https://share.weiyun.com/5s6cvFr" class="btn btn-sm btn-outline-primary" target="_blank"><i
+                                                class="fa fa-download"></i> 立即下载</a>
+                                        <a href="https://item.jd.com/1026399427.html" class="btn btn-sm btn-outline-warning" target="_blank"><i
+                                                class="fa fa-cart-plus"></i> 购买正版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Card content-->
+
+                        </div>
+                        <!--Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!-- /.Products Grid -->
+
+        </div>
+        <!-- /.Content -->
+
+    </div>
+</div>
+<!-- /.Main Container -->
+
+<!-- 共享书籍 -->
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">共享书籍</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                    <div class="col-md-12 col-xl-12">
+                        <form>
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <div class="md-form">
+                                        <div class="md-form">
+                                            <input type="text" id="user-name" class="form-control">
+                                            <label for="user-name" class="">昵称</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <div class="md-form">
+                                        <div class="md-form">
+                                            <input type="text" id="user-email" class="form-control">
+                                            <label for="user-email" class="">微信</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="user-content" class="md-textarea form-control" rows="3"></textarea>
+                                        <label for="user-content">下载地址</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-success waves-effect waves-light" onclick="submitMessage()" data-dismiss="modal">
+                    <i class="fa fa-check ml-1"></i>
+                    确定
+                </a>
+                <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">
+                    <i class="fa fa-times l-1"></i>
+                    取消
+                </a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<!-- 返回顶部 -->
+<section >
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-lg purple-gradient" style="display:none;" id="goTop">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+
+<!-- 网站底部 -->
+<footer class="page-footer text-center text-md-left unique-color-dark pt-0">
+    <div style="background-color: #f95169;">
+        <div class="container">
+
+            <!--Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+                <!--Grid column-->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-md-0">
+                    <h6 class="mb-0 white-text">通过社交网络联系我们!</h6>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <a class="p-2 m-2 fa-lg fb-ic ml-0" href="http://wpa.qq.com/msgrd?v=3&amp;uin=545544032&amp;site=qq&amp;menu=yes" target="_blank">
+                        <i class="fa fa-qq white-text mr-lg-4"> </i>
+                    </a>
+                    <a class="p-2 m-2 fa-lg gplus-ic" href="https://github.com/ChinaSilence" target="_blank">
+                        <i class="fa fa-github white-text mr-lg-4"> </i>
+                    </a>
+                    <a class="p-2 m-2 fa-lg li-ic" href="https://gitee.com/anymk" target="_blank">
+                        <i class="fa fa-gitlab white-text mr-lg-4"> </i>
+                    </a>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+        </div>
+    </div>
+
+    <!-- 版权及备案信息 -->
+    <div class="footer-copyright text-center py-3">
+        <div class="container-fluid">
+            © 2018 Copyright. <a href="http://www.miitbeian.gov.cn/" target="_blank">鄂ICP备16007917号-1</a>
+        </div>
+    </div>
+    <!-- /版权及备案信息 -->
+
+</footer>
+<!-- /网站底部 -->
+
+<!-- JQuery -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script src="https://cdn.bootcss.com/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    //Animation init
+    new WOW().init();
+
+    // 返回顶部
+    $(function(){
+        $(window).scroll(function(){
+            if($(window).scrollTop() > 500){
+                $("#goTop").fadeIn(200);
+            }
+            else{
+                $("#goTop").hide(200);
+            }
+        });
+        $("#goTop").click(function(){
+            $('html,body').animate({'scrollTop': 0 }, 500);
+        });
+    });
+
+    /**
+     * 用户提交留言
+     */
+    function submitMessage() {
+        var username = $("#user-name").val();
+        var email = $("#user-email").val();
+        var message = $("#user-content").val();
+        if(username.trim().length === 0){
+            toastr.error("请填写您的姓名 ！");
+            return;
+        }
+        if(email.trim().length === 0){
+            toastr.error("请填写您的微信 ！");
+            return;
+        }
+        if(message.trim().length === 0){
+            toastr.error("下载地址不能为空 ！");
+            return;
+        }
+        $.post("/api/common/message",{
+            nickname:username,
+            email:email,
+            content:message
+        },function(response){
+            if (response.code ===  0){
+                $('#user-name').val('');
+                $('#user-email').val('');
+                $('#user-content').val('');
+                toastr.success("感谢您的分享，审核通过后会及时上架！");
+            }else {
+                toastr.error("发送失败，请用其他方式联系我们！");
+            }
+        });
+        return false;
+    }
+</script>
+
+</body>
+</html>

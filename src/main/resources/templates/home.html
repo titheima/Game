@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html class="full-height" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ANYMK 轻量级微服务架构</title>
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/css/mdb.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/toastr.css" rel="stylesheet">
+</head>
+
+<body class="creative-lp">
+
+<!-- Navigation & Intro -->
+<header>
+
+    <!-- 顶部导航 -->
+    <nav th:replace="~{common :: nav}"></nav>
+
+    <!--Intro Section-->
+    <section class="view intro-2">
+        <div class="full-bg-img">
+            <div class="mask rgba-gradient-1">
+                <div class="container flex-center">
+                    <div class="row flex-center">
+                        <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+                            <div class="white-text">
+                                <h1 class="h1-responsive font-weight-bold mt-sm-5 mb-4 wow fadeInLeft" data-wow-delay="0.3s">轻量级微服务架构实践</h1>
+                                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">
+                                    组件轻量、服务松耦合、弹性伸缩、性能卓越、安全性高、可用性高、快速迭代，敏捷开发团队首选！
+                                </h6>
+                                <br>
+                                <a class="btn pink-gradient btn-rounded btn-lg font-weight-bold wow fadeInLeft" data-wow-delay="0.4s">开始体验</a>
+                                <a class="btn btn-white btn-rounded btn-lg orange-text font-weight-bold ml-lg-0 wow fadeInLeft" data-wow-delay="0.4s">
+                                    <i class="fa fa-play-circle orange-text mr-2" aria-hidden="true"></i> 观看演示</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-8clearfix d-none d-md-block wow fadeInRight justify-content-center" data-wow-delay="0.3s">
+                            <img src="https://mdbootstrap.com/img/Others/cards32.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</header>
+<!-- Navigation & Intro -->
+
+<!-- Main content -->
+<main>
+
+    <div class="container">
+
+        <!-- Section: Features v.4 -->
+        <section id="features" class="section feature-box mb-5 pb-4">
+
+            <!-- Section heading -->
+            <h2 class="text-center title my-5 pt-5 pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>核心技术</strong>
+            </h2>
+
+            <!-- Section sescription -->
+            <p class="section-description pb-4 wow fadeIn" data-wow-delay="0.2s">
+                稳定的、高效的开源框架能够使工作事半功倍！</p>
+
+            <!--Grid row-->
+            <div class="row features wow fadeIn" data-wow-delay="0.2s">
+
+                <!--Grid column-->
+                <div class="col-lg-4 text-center">
+                    <div class="icon-area">
+                        <div class="circle-icon">
+                            <img src="https://upload-images.jianshu.io/upload_images/3424642-cd45b59ff4041cf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="avatar px-3 py-3"  style="max-height: 100px">
+                        </div>
+                        <br>
+                        <h5 class="dark-grey-text font-weight-bold mt-2">Spring Boot 2.0</h5>
+                        <div class="mt-1">
+                            <p class="mx-3 grey-text">通过 Spring Boot 可以轻松创建独立的、生产级别的应用程序，大多数 Spring Boot 应用仅需要很少的配置即可运行。</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 text-center">
+                    <div class="icon-area">
+                        <div class="circle-icon">
+                            <img src="https://upload-images.jianshu.io/upload_images/3424642-23be2c6b221a9f32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="avatar px-3 py-3" style="max-height: 100px">
+                        </div>
+                        <br>
+                        <h5 class="dark-grey-text font-weight-bold mt-2">Vue 2.0</h5>
+                        <div class="mt-1">
+                            <p class="mx-3 grey-text">Vue 是一套用于构建用户界面的渐进式框架，它的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="icon-area">
+                        <div class="circle-icon">
+                            <img src="https://upload-images.jianshu.io/upload_images/3424642-eb3abe8363088f98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" class="avatar px-3 py-3"  style="max-height: 100px">
+                        </div>
+                        <br>
+                        <h5 class="dark-grey-text font-weight-bold mt-2">Docker</h5>
+                        <div class="mt-1">
+                            <p class="mx-3 grey-text">Docker 让应用程序布署在软件容器下的工作可以自动化进行，借此在Linux操作系统上，提供一个额外的软件抽象层，以及操作系统层虚拟化的自动管理机制。</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!-- Section: Features v.4 -->
+
+        <hr>
+
+        <!-- Section: About 1-->
+        <section id="about" class="section about mt-5 mb-5 py-3 wow fadeIn" data-wow-delay="0.2s">
+
+            <!-- Grid row -->
+            <div class="row pt-2 mt-lg-5">
+
+                <!-- Grid column -->
+                <div class="col-lg-6 col-md-12 mb-3 wow fadeIn" data-wow-delay="0.4s">
+                    <!-- Image -->
+                    <img src="https://upload-images.jianshu.io/upload_images/3424642-63ba261368773260.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="img-fluid rounded" alt="My photo">
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-lg-6 ml-auto col-md-12 wow fadeIn" data-wow-delay="0.4s">
+
+                    <!-- Secion heading -->
+                    <h2 class="mb-5 title font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                        <strong>anymk 简介</strong>
+                    </h2>
+
+                    <!-- Description -->
+                    <p align="justify" class="grey-text">
+                        WebSocket 应用场景非常广泛，例如社交聊天、弹幕、多玩家游戏、协同编辑、股票基金实时报价、体育实况更新、视频会议/聊天、实时定位、在线教育、智能家居等，这些场景都与我们的生活息息相关。
+                    </p>
+                    <p class="grey-text">
+                       anymk 使用 Spring Framework 中的 WebSocket 模块，基于 STOMP 协议实现点对点、点对多、多对多通信等功能，并应用容器化技术加强容器编排的能力。
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </section>
+        <!-- Section: About 1 -->
+
+    </div>
+
+    <!-- Streak -->
+    <div class="streak streak-photo streak-md" style="background-image: url('https://upload-images.jianshu.io/upload_images/3424642-51f5f7d6fa0e86be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240');">
+        <div class="flex-center view rgba-indigo-light">
+            <div class="container py-3">
+
+                <!--Section: Features v.4-->
+                <section class="section feature-box wow fadeIn" data-wow-delay="0.2s">
+
+                    <!--Section heading-->
+                    <h2 class="py-5 my-5 white-text font-weight-bold text-center wow fadeIn" data-wow-delay="0.2s">
+                        技术选型</h2>
+
+                    <!--Grid row-->
+                    <div class="row features-small mb-5">
+
+                        <!--Grid column-->
+                        <div class="col-md-12 col-lg-6">
+
+                            <!--Grid row-->
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <a type="button" class="btn-floating white btn-lg my-0">
+                                        <i class="fa fa-cubes blue-text" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-9 pl-5">
+                                    <h4 class="feature-title white-text">集群管理</h4>
+                                    <p class="white-text">Docker Swarm</p>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <a type="button" class="btn-floating white btn-lg my-0">
+                                        <i class="fa fa-connectdevelop blue-text" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-9 pl-5">
+                                    <h4 class="feature-title white-text">运维管理</h4>
+                                    <p class="white-text">Ansible, Gitlab CI/CD</p>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <a type="button" class="btn-floating white btn-lg my-0">
+                                        <i class="fa fa-database blue-text" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-9 pl-5">
+                                    <h4 class="feature-title white-text">存储管理</h4>
+                                    <p class="white-text">MongoDB, Redis, MariaDB
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-12 col-lg-6">
+
+                            <!--Grid row-->
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <a type="button" class="btn-floating white btn-lg my-0">
+                                        <i class="fa fa-file-text blue-text" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-9 pl-5">
+                                    <h4 class="feature-title white-text">日志中心</h4>
+                                    <p class="white-text">Logstash, ElasticSearch, Kibana
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <a type="button" class="btn-floating white btn-lg my-0">
+                                        <i class="fa fa-area-chart blue-text" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-9 pl-5">
+                                    <h4 class="feature-title white-text">监控中心</h4>
+                                    <p class="white-text">CAdvice, InfluxDB, Prometheus, Grafana
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row mb-5">
+                                <div class="col-2">
+                                    <a type="button" class="btn-floating white btn-lg my-0">
+                                        <i class="fa fa-bolt blue-text" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-9 pl-5">
+                                    <h4 class="feature-title white-text">消息中间件</h4>
+                                    <p class="white-text">Nats
+                                    </p>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                </section>
+                <!--/Section: Features v.4-->
+            </div>
+        </div>
+    </div>
+    <!--/Streak-->
+
+    <div class="container-fluid" style="background-color: #f4f4fa">
+        <div class="container py-4">
+
+            <!--Section: Services-->
+            <section class="section mt-3 mb-3 pb-3">
+
+                <!-- Section heading -->
+                <h3 class="text-center title my-5 pt-4 pb-5 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                    <strong>快速开始</strong>
+                </h3>
+
+                <!-- First row -->
+                <div class="row wow fadeIn" data-wow-delay="0.4s">
+
+                    <!-- First column -->
+                    <div class="col-md-4 mb-5 text-center">
+
+                        <!--Panel-->
+                        <div class="card card-body text-left white hoverable">
+                            <p class="feature-title title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                                <i class="fa fa-square orange-text mr-2" aria-hidden="true"></i>
+                                <strong>01 下载源码</strong>
+                            </p>
+                            <p class="grey-text font-small mx-4">
+                                通过 <a href="" target="_blank">Github</a> 或 <a href="" target="">码云</a> 获取源码
+                            </p>
+                        </div>
+                        <!--/.Panel-->
+
+                    </div>
+                    <!-- /First column -->
+
+                    <!-- Second column -->
+                    <div class="col-md-4 mb-5 text-center">
+
+                        <!--Panel-->
+                        <div class="card card-body text-left white hoverable">
+                            <p class="feature-title title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                                <i class="fa fa-square orange-text mr-2" aria-hidden="true"></i>
+                                <strong>02 启动数据库</strong>
+                            </p>
+                            <p class="grey-text font-small mx-4">
+                                通过 <a href="" target="_blank">MongoDB 镜像</a> 启动数据库
+                            </p>
+                        </div>
+                        <!--/.Panel-->
+
+                    </div>
+                    <!-- /.Second column -->
+
+                    <!-- Third column -->
+                    <div class="col-md-4 mb-5 text-center">
+
+                        <!--Panel-->
+                        <div class="card card-body text-left white hoverable">
+                            <p class="feature-title title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                                <i class="fa fa-square orange-text mr-2" aria-hidden="true"></i>
+                                <strong>03 启动应用</strong>
+                            </p>
+                            <p class="grey-text font-small mx-4">
+                                执行 <code>mvn spring-boot:run</code> 启动应用
+                            </p>
+                        </div>
+                        <!--/.Panel-->
+
+                    </div>
+                    <!-- /.Third column -->
+
+                </div>
+                <!-- /.First row -->
+
+            </section>
+            <!--/Section: Services-->
+
+        </div>
+    </div>
+    <!--Second container-->
+
+    <div class="container">
+
+        <!-- Section: Team v.1 -->
+        <section class="section team-section pb-5" id="team">
+
+            <!-- Section heading -->
+            <h3 class="text-center title my-5 py-4 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>Contributor</strong>
+            </h3>
+            <!-- Section description -->
+            <p class="section-description">
+
+            </p>
+
+            <div class="row mt-5 pt-5">
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-5">
+
+                    <!--Card-->
+                    <div class="card testimonial-card">
+
+                        <!--Background color-->
+                        <div class="card-up pink-gradient"></div>
+
+                        <!--Avatar-->
+                        <div class="avatar mx-auto white">
+                            <img src="https://upload.jianshu.io/users/upload_avatars/3424642/fb55f16faaf6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" class="rounded-circle img-responsive">
+                        </div>
+
+                        <div class="card-body">
+                            <!--Name-->
+                            <h4 class="mt-1">
+                                <strong>anymk</strong>
+                            </h4>
+                            <hr>
+                            <!--Quotation-->
+                            <p class="dark-grey-text">全栈工程师，目前就职于上海特赞。</p>
+                        </div>
+
+                    </div>
+                    <!--Card-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-5">
+
+                    <!--Card-->
+                    <div class="card testimonial-card">
+
+                        <!--Background color-->
+                        <div class="card-up pink-gradient">
+                        </div>
+
+                        <!--Avatar-->
+                        <div class="avatar mx-auto white">
+                            <img src="https://upload-images.jianshu.io/upload_images/3424642-825586c429172b56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="rounded-circle img-responsive">
+                        </div>
+
+                        <div class="card-body">
+                            <!--Name-->
+                            <h4 class="mt-1">
+                                <strong>Freedom Engineer</strong>
+                            </h4>
+                            <hr>
+                            <!--Quotation-->
+                            <p class="dark-grey-text">热闹的工程师Q群：481678152</p>
+                        </div>
+
+                    </div>
+                    <!--Card-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-5">
+
+                    <!--Card-->
+                    <div class="card testimonial-card">
+
+                        <!--Background color-->
+                        <div class="card-up  pink-gradient"></div>
+
+                        <!--Avatar-->
+                        <div class="avatar mx-auto white">
+                            <img src="https://upload.jianshu.io/users/upload_avatars/2172284/d0ad0509a627.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" class="rounded-circle img-responsive">
+                        </div>
+
+                        <div class="card-body">
+                            <!--Name-->
+                            <h4 class="mt-1">
+                                <strong>Anonymous</strong>
+                            </h4>
+                            <hr>
+                            <!--Quotation-->
+                            <p class="dark-grey-text">程序员鼓励师</p>
+                        </div>
+
+                    </div>
+                    <!--Card-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+
+        </section>
+        <!-- Section: Team v.1 -->
+
+    </div>
+
+    <!-- Streak -->
+    <div class="streak streak-photo streak-md" style="background-image: url('https://upload-images.jianshu.io/upload_images/3424642-fde5831fd635cccf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240');">
+        <div class="flex-center mask rgba-gradient">
+            <div class="container my-5">
+
+                <!-- Section heading -->
+                <h3 class="text-center pb-3 white-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                    <strong>如何成为贡献者</strong>
+                </h3>
+                <h6 class="text-center white-text pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">Show me your code!</h6>
+                <!--First row-->
+                <div class="row flex-center">
+
+                    <a class="btn btn-white btn-rounded btn-lg orange-text font-weight-bold ml-0 wow fadeIn" data-wow-delay="0.2s" href="https://github.com/ChinaSilence" target="_blank">
+                        <i class="fa fa-github pr-2" aria-hidden="true"></i> Github 地址</a>
+                    <a class="btn btn-white btn-rounded btn-lg orange-text font-weight-bold wow fadeIn" data-wow-delay="0.2s" href="https://gitee.com/anymk" target="_blank">
+                        <i class="fa fa-gitlab pr-2" aria-hidden="true"></i> 码云地址</a>
+                </div>
+                <!--First row-->
+
+            </div>
+        </div>
+    </div>
+    <!-- Streak -->
+
+    <!-- Section: Contact v.2 -->
+    <div class="container">
+
+        <!--Section: Pricing v.5-->
+        <section class="text-center pb-5 mb-4">
+
+            <!--Section heading-->
+            <h2 class="text-center title my-5 pt-5 pb-4 font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+                <strong>付费服务</strong>
+            </h2>
+
+            <!--Section description-->
+            <p class="section-description">
+                尽最大的努力，做更优雅的事！
+            </p>
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-5">
+                    <!--Card-->
+                    <div class="pricing-card card">
+
+                        <!--Content-->
+                        <div class="card-body">
+                            <h5 class="mt-3 title">
+                                <strong>基础版</strong>
+                            </h5>
+                            <!--Price-->
+                            <div class="price pt-0">
+                                <h1 class="orange-text">0</h1>
+                            </div>
+                            <!--Price-->
+                            <ul class="list-unstyled striped title">
+                                <li>
+                                    <p>单机服务</p>
+                                </li>
+                                <li>
+                                    <p>Docker 镜像</p>
+                                </li>
+                                <li>
+                                    <p>问题答疑</p>
+                                </li>
+                                <li>
+                                    <p>定制修改[付费]</p>
+                                </li>
+                            </ul>
+                            <a class="btn pink-gradient btn-rounded mb-4"> 立即体验</a>
+                        </div>
+                    </div>
+                    <!--Card-->
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-5">
+
+                    <!-- Card -->
+                    <div class="pricing-card card">
+
+                        <!--Content-->
+                        <div class="card-body">
+                            <h5 class="mt-3 title">
+                                <strong>集群版</strong>
+                            </h5>
+                            <!--Price-->
+                            <div class="price pt-0">
+                                <h1 class="orange-text">99↑</h1>
+                            </div>
+                            <!--Price-->
+                            <ul class="list-unstyled striped">
+                                <li>
+                                    <p>基础服务</p>
+                                </li>
+                                <li>
+                                    <p>架构详解</p>
+                                </li>
+                                <li>
+                                    <p>定制镜像</p>
+                                </li>
+                                <li>
+                                    <p>问题处理</p>
+                                </li>
+                            </ul>
+                            <a class="btn pink-gradient btn-rounded mb-4"> 立即购买</a>
+                        </div>
+
+                    </div>
+                    <!--Card-->
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-5">
+                    <!--Card-->
+                    <div class="pricing-card card">
+
+                        <!--Content-->
+                        <div class="card-body">
+                            <h5 class="mt-3 title">
+                                <strong>定制版</strong>
+                            </h5>
+                            <!--Price-->
+                            <div class="price pt-0">
+                                <h1 class="orange-text">XX</h1>
+                            </div>
+                            <!--Price-->
+                            <ul class="list-unstyled striped title">
+                                <li>
+                                    <p>需求分析</p>
+                                </li>
+                                <li>
+                                    <p>功能实现</p>
+                                </li>
+                                <li>
+                                    <p>代码交付</p>
+                                </li>
+                                <li>
+                                    <p>后期维护</p>
+                                </li>
+                            </ul>
+                            <a class="btn pink-gradient btn-rounded mb-4">立即咨询</a>
+                        </div>
+
+                    </div>
+                    <!--Card-->
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: Pricing v.5-->
+
+
+        <section id="contract" class="section mb-5">
+
+            <!--Section heading-->
+            <h2 class="section-heading title h1 pt-4">联系我们</h2>
+            <!--Section description-->
+            <p class="section-description">
+
+            </p>
+
+            <div class="row pt-5">
+
+                <!--Grid column-->
+                <div class="col-md-8 col-xl-9">
+                    <form>
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <div class="md-form">
+                                        <input type="text" id="user-name" class="form-control">
+                                        <label for="user-name" class="">昵称</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <div class="md-form">
+                                        <input type="text" id="user-email" class="form-control">
+                                        <label for="user-email" class="">微信</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                            <!--Grid column-->
+                            <div class="col-md-12">
+
+                                <div class="md-form">
+                                    <textarea type="text" id="user-content" class="md-textarea form-control" rows="3"></textarea>
+                                    <label for="user-content">内容</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Grid row-->
+
+                    </form>
+
+                    <div class="text-center text-md-left mt-4">
+                        <button class="btn pink-gradient btn-rounded waves-effect waves-light" onclick="submitMessage()">发送留言【实时】</button>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4 col-xl-3">
+                    <ul class="list-unstyled contact-icons">
+                        <li>
+                            <i class="fa fa-map-marker fa-2x orange-text"></i>
+                            <p>上海市 黄浦区 复兴SOHO3Q</p>
+                        </li>
+
+                        <li>
+                            <i class="fa fa-envelope fa-2x orange-text"></i>
+                            <p>545544032@qq.com</p>
+                        </li>
+
+                        <li>
+                            <i class="fa fa-wechat fa-2x orange-text"></i>
+                            <p>VIPshaohan</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+</main>
+<!-- Main content -->
+
+<!-- 网站底部 -->
+<footer th:replace="~{common :: footer}"></footer>
+<!-- /网站底部 -->
+
+<!-- JQuery -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script src="https://cdn.bootcss.com/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+<script>
+    //Animation init
+    new WOW().init();
+
+    /**
+    * 用户提交留言
+    */
+    function submitMessage() {
+        var username = $("#user-name").val();
+        var email = $("#user-email").val();
+        var message = $("#user-content").val();
+        if(username.trim().length === 0){
+            toastr.error("请填写您的姓名 ！");
+            return;
+        }
+        if(email.trim().length === 0){
+            toastr.error("请填写您的微信 ！");
+            return;
+        }
+        if(message.trim().length === 0){
+            toastr.error("留言内容不能为空 ！");
+            return;
+        }
+        $.post("/api/common/message",{
+            nickname:username,
+            email:email,
+            content:message
+        },function(response){
+            if (response.code ===  0){
+                $('#user-name').val('');
+                $('#user-email').val('');
+                $('#user-content').val('');
+                toastr.success("发送成功，随后会回复您！");
+            }else {
+                toastr.error("发送失败，请用其他方式联系我们！");
+            }
+        });
+        return false;
+    }
+</script>
+
+</body>
+
+</html>
