@@ -31,8 +31,8 @@ public class CustomAttributesConfig {
     private List<String> rewardImages=new ArrayList<>();
 
     public CustomAttributesConfig() {
-        rewardImages.add("/image/wxds.JPG");
-        rewardImages.add(("/image/zfb.JPG"));
+        rewardImages.add("/image/wxds.jpg");
+        rewardImages.add(("/image/zfb.jpg"));
     }
 
     // 打赏描述
