@@ -69,5 +69,5 @@ d.退出 ctrl + c 
 e.查看日志 tail -500f nohup.out
 
 #### 联系作者
-- 微信 VIPshaohan
-- 邮箱 545544032@qq.com
+- 微信 17673125001
+- 邮箱 gentoo111@163.com
