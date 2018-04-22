@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 @Log4j2
 public class UserService {
 
-    private static final String PASSWORD_RULE = "^(\\w){6,20}$";
+    private static final String PASSWORD_RULE = "^(\\w){3,20}$";
 
     private final UserRepository userRepository;
 

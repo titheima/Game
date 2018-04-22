@@ -59,4 +59,11 @@ public class JianshuTools {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        List<JSONObject> cachedArticles = getCachedArticles();
+        for (JSONObject cachedArticle : cachedArticles) {
+            System.out.println(cachedArticle);
+        }
+    }
 }
