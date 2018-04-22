@@ -12,7 +12,8 @@ import java.io.IOException;
 @Log4j2
 public class DingTalkTools {
 
-    private final static String API = "https://oapi.dingtalk.com/robot/send?access_token=b1586fba8caf2c98bf6f1174b4ec57c75941553a15a75c437422f55fc1b76cd1";
+    //private final static String API = "https://oapi.dingtalk.com/robot/send?access_token=b1586fba8caf2c98bf6f1174b4ec57c75941553a15a75c437422f55fc1b76cd1";
+    private final static String API = "https://oapi.dingtalk.com/robot/send?access_token=15d81ec5f3a137aa8e7dd36b6c7f546f";
 
     private final static String TYPE_TEXT = "text";
 

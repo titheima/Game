@@ -88,4 +88,68 @@ public class JianshuBean {
         private String name;
     }
 
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public List<OwnCollection> getOwnCollections() {
+        return ownCollections;
+    }
+
+    public void setOwnCollections(List<OwnCollection> ownCollections) {
+        this.ownCollections = ownCollections;
+    }
+
+    public List<Notebook> getNotebooks() {
+        return notebooks;
+    }
+
+    public void setNotebooks(List<Notebook> notebooks) {
+        this.notebooks = notebooks;
+    }
+
+    public int getOwnCollectionPage() {
+        return ownCollectionPage;
+    }
+
+    public void setOwnCollectionPage(int ownCollectionPage) {
+        this.ownCollectionPage = ownCollectionPage;
+    }
+
+    public int getOwnCollectionTotalPages() {
+        return ownCollectionTotalPages;
+    }
+
+    public void setOwnCollectionTotalPages(int ownCollectionTotalPages) {
+        this.ownCollectionTotalPages = ownCollectionTotalPages;
+    }
+
+    public int getNotebookPage() {
+        return notebookPage;
+    }
+
+    public void setNotebookPage(int notebookPage) {
+        this.notebookPage = notebookPage;
+    }
+
+    public int getNotebookTotalPages() {
+        return notebookTotalPages;
+    }
+
+    public void setNotebookTotalPages(int notebookTotalPages) {
+        this.notebookTotalPages = notebookTotalPages;
+    }
 }
