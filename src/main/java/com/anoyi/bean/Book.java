@@ -35,6 +35,9 @@ public class Book {
     // 更新时间
     private Date updateTime;
 
+    //书籍描述
+    private String description;
+
     public String getId() {
         return id;
     }
@@ -97,5 +100,13 @@ public class Book {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
