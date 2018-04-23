@@ -1,9 +1,12 @@
 package com.anoyi.api;
 
+import com.alibaba.fastjson.JSON;
 import com.anoyi.bean.Comment;
+import com.anoyi.bean.Image;
 import com.anoyi.bean.MessageBean;
 import com.anoyi.bean.ResponseBean;
 import com.anoyi.mongo.model.UserBean;
+import com.anoyi.mongo.repository.ImageRepsotory;
 import com.anoyi.mongo.service.CommentService;
 import com.anoyi.mongo.service.UserService;
 import com.anoyi.tools.DingTalkTools;
@@ -12,8 +15,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * 通用 API
@@ -27,6 +29,8 @@ public class CommonAPI {
 	private final UserService userService;
 
 	private final CommentService commentService;
+
+	private final ImageRepsotory imageRepsotory;
 
     /**
      * 用户注册
@@ -75,7 +79,18 @@ public class CommonAPI {
             comment.setName(user.getNickname());
             comment.setAvatar(user.getAvatar());
         }
-        comment.setShow(false);
+        comment.setContent("<span style='color:#87ed92'>"+comment.getName()+"</span>:"+comment.getContent());
+        comment.setCreateTime(new Date());
+        comment.setShow(true);
+        //设置文章作者id
+        comment.setArticleId("1");
+
+        int id=(int)(1+Math.random()*10);
+        Optional<Image> imageOptional = imageRepsotory.findById(id + "");
+        String imageStr = JSON.toJSON(imageOptional).toString();
+        Image image = JSON.parseObject(imageStr, Image.class);
+        comment.setAvatar(image.getImgUrl());
+
         commentService.save(comment);
         MessageBean messageBean = new MessageBean();
         messageBean.setContent(comment.getContent());

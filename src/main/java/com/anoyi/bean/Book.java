@@ -9,10 +9,10 @@ import java.util.Date;
  * 书籍
  */
 @Data
-public class Book {
+public class Book implements Comparable<Book>{
 
     @Id
-    private String id;
+    private long id;
 
     // 封面
     private String cover;
@@ -38,11 +38,11 @@ public class Book {
     //书籍描述
     private String description;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -108,5 +108,12 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        int result=0;
+        result=(int)(this.id-o.id);
+        return result;
     }
 }

@@ -1,5 +1,7 @@
 package com.anoyi.mongo.service;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.anoyi.bean.Comment;
 import com.anoyi.mongo.repository.CommentRepository;
 import lombok.AllArgsConstructor;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 留言相关
@@ -35,4 +38,13 @@ public class CommentService {
         return commentRepository.findAllByShowAndArticleId(true, articleId, Sort.by(Sort.Order.desc("createTime")));
     }
 
+    public List<Comment> findAll() {
+        return commentRepository.findAll(Sort.by(Sort.Order.desc("createTime")));
+    }
+
+    public Comment findOne(String id) {
+        Optional<Comment> comment = commentRepository.findById(id);
+        String jsonStr = JSON.toJSON(comment).toString();
+        return JSON.parseObject(jsonStr, Comment.class);
+    }
 }

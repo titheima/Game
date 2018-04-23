@@ -42,7 +42,7 @@ public class BookTools {
                 int degree=element.select(".fa-star").size();
                 String buy = element.select(".btn-outline-primary").attr("href");
                 String download = element.select(".btn-outline-warning").attr("href");
-                book.setId(Integer.toString(i));
+                book.setId(Long.valueOf(i+""));
                 book.setCover(cover);
                 book.setDegree(degree);
                 book.setLanguage(language);

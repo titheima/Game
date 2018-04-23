@@ -9,9 +9,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -45,71 +47,69 @@ public class BookController {
         return "book_back";
     }
 
-    @GetMapping("/book/list")
+    @GetMapping("/admin/book")
     public String bookList(Model model) {
-        List<Book> books = bookRepository.findAll(Sort.by(Sort.Direction.DESC, "updateTime"));
+        List<Book> books = bookRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
         model.addAttribute("books", books);
-        return "book/list";
+        return "admin/book";
     }
 
     /**
      * 根据书名查询书籍
+     *
      * @param name
      * @param model
      * @return
      * @throws Exception
      */
-    @RequestMapping("/book_search")
-    public String bookSearch(String name,Model model)throws Exception{
+    @RequestMapping("/admin/book_search")
+    public String bookSearch(String name, Model model) throws Exception {
         if (StringUtils.isEmpty(name)) {
-            return "redirect:/book/list";
+            return "redirect:/admin/book";
         }
-        URLEncoder.encode(name,"utf-8");
-        List<Book> books=bookRepository.findByNameLike(name);
+        URLEncoder.encode(name, "utf-8");
+        List<Book> books = bookRepository.findByNameLike(name);
         model.addAttribute("books", books);
-        return "book/list";
+        return "admin/book";
     }
 
-    @RequestMapping("/book_save")
+    @RequestMapping("/admin/book_save")
     @ResponseBody
-    public ResponseBean bookSave(Book book) {
-//        book.setId("1");
-//        book.setCover("https://img13.360buyimg.com/n1/s200x200_jfs/t6130/167/771989293/235186/608d0264/592bf167Naf49f7f6.jpg");
-//        book.setBuy("https://item.jd.com/11252778.html");
-//        book.setDegree(5);
-//        book.setDownload("https://share.weiyun.com/5df6LcB");
-//        book.setLanguage("中文");
-//        book.setName("深入理解Java虚拟机-第二版");
-//        book.setUpdateTime(new Date());
+    public synchronized ResponseBean bookSave(Book book) {
         book.setUpdateTime(new Date());
+        List<Book> books = bookRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        if (book.getId()==0) {
+            book.setId(books.get(0).getId()+1);
+        }
         bookRepository.save(book);
         return ResponseBean.success(null);
     }
 
     @GetMapping("/book_findOne")
-    public String bookFindOne(String id) {
+    public String bookFindOne(Long id) {
         Optional<Book> book = bookRepository.findById(id);
         String jsonBook = JSON.toJSON(book).toString();
+        JSON.parseObject(jsonBook, Book.class);
+        System.out.println(jsonBook);
         return "book";
     }
 
-    @GetMapping("/book_delete")
-    public String bookDelete(String id) {
+    @GetMapping("/admin/book_delete")
+    public String bookDelete(Long id) {
         Book book = new Book();
         book.setId(id);
-        System.out.println("执行删除操作");
         bookRepository.delete(book);
-        return "redirect:/book/list";
+        return "redirect:/admin/book";
     }
 
-    @GetMapping("/book_deleteAll")
+    @GetMapping("/admin/book_deleteAll")
     public String boodDeleteAll() {
         bookRepository.deleteAll();
-        return "book";
+        return "redirect:/admin/book";
     }
 
     //爬取图书
-    @GetMapping("/book_crawl")
+    @GetMapping("/admin/book_crawl")
     public String bookCrawl() {
         try {
             Document document = Jsoup.connect("http://localhost/book_back").get();
@@ -124,7 +124,7 @@ public class BookController {
                 int degree = element.select(".fa-star").size();
                 String download = element.select(".btn-outline-primary").attr("href");
                 String buy = element.select(".btn-outline-warning").attr("href");
-                book.setId(Integer.toString(i));
+                book.setId(Long.valueOf(i + ""));
                 book.setCover(cover);
                 book.setDegree(degree);
                 book.setLanguage(language);
@@ -143,6 +143,6 @@ public class BookController {
             e.printStackTrace();
         }
 
-        return "book";
+        return "/admin/book";
     }
 }
