@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>书架</title>
+    <link rel="shortcut icon" href="/image/favicon.ico"/>
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/css/mdb.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/toastr.css" rel="stylesheet">
+</head>
+<style>
+    .table tbody tr td {
+        vertical-align: middle;
+        padding: 5px;
+    }
+
+    .table th {
+        font-size: large;
+    }
+</style>
+<body class="creative-lp">
+
+<header>
+
+    <!-- 顶部导航 -->
+    <nav th:replace="~{common :: nav}"></nav>
+
+</header>
+
+<!-- /.Main Container -->
+<div class="container">
+    <div class="row pt-4">
+
+        <!-- Content -->
+        <div class="col-lg-12">
+
+            <!-- Books Grid -->
+            <section class="section pt-4">
+
+                <header style="height: 100%;padding-top: 30px;">
+                    <div align="left">
+                        <table style="width: 100%">
+                            <tr>
+                                <td>
+                                    <form class="form-inline" onsubmit="return false">
+                                        <div class="form-group">
+                                            书名： <input id="bookName" type="text" class="form-control"
+                                                       placeholder="请输入书名以查找">
+                                            <a class="btn blue-gradient btn-rounded btn-sm font-weight-normal"
+                                               onclick="searchBook()">
+                                                <i class="fa fa-search"></i>&nbsp;&nbsp;搜索</a>
+                                        </div>
+                                    </form>
+                                </td>
+                                <td align="middle">
+                                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-normal"
+                                       data-toggle="modal" data-target="#shareModal" onclick="addBook()">
+                                        <i class="fa fa-plus-square"></i>&nbsp;&nbsp;新增书籍</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </header>
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <div class="widget-body no-padding">
+                        <table id="dt-table"
+                               class="table table-striped table-bordered table-hover"
+                               style="width: 100%">
+                            <thead>
+                            <tr></tr>
+                            <tr class="col-lg-12 col-md-6 mb-4 text-center">
+                                <th>封面</th>
+                                <th>序号</th>
+                                <th>书名</th>
+                                <th>语言</th>
+                                <th>评分</th>
+                                <th>下载地址</th>
+                                <th>购买实体书</th>
+                                <th>修改</th>
+                                <th>删除</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="col-lg-12 col-md-6 mb-4" th:each="book : ${books}">
+
+                                <td><img th:src="${book.cover}" class="mx-auto d-block" alt=""
+                                         style="max-height: 80px;"></td>
+                                <td>
+                                    <h5 class="card-title mb-1">
+                                        <strong>
+                                            <a href="" class="dark-grey-text" th:text="${book.id}"></a>
+                                        </strong>
+                                    </h5>
+                                </td>
+                                <td>
+                                    <h5 class="card-title mb-1">
+                                        <strong>
+                                            <a href="" class="dark-grey-text" th:text="${book.name}"></a>
+                                        </strong>
+                                    </h5>
+                                </td>
+                                <td style="text-align: center"><span class="badge badge-info mb-2"
+                                                                     th:text="${book.language}"></span></td>
+                                <td>
+                                    <ul class="rating" style="padding-top: 15px;">
+                                        <li th:each="i : ${#numbers.sequence( 1, book.degree)}">
+                                            <i class="fa fa-star blue-text"></i>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-normal"
+                                       th:href="${book.download}" target="_blank"><i
+                                            class="fa fa-download"></i>&nbsp;&nbsp;下载本书</a>
+                                </td>
+                                <td>
+                                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-normal"
+                                       th:if="${book.buy}" th:href="${book.buy}" target="_blank">
+                                        <i class="fa fa-cart-plus"></i>&nbsp;&nbsp;购买正版</a>
+                                </td>
+                                <td>
+                                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-normal"
+                                       data-toggle="modal" data-target="#shareModal" th:onclick="'javascript:updateBook(\''+${book}+'\');'">
+                                        <i class="fa fa-edit"></i>&nbsp;&nbsp;修改</a>
+                                </td>
+                                <td>
+                                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-normal"
+                                       th:href="@{'/book_delete?id='+${book.id}}" target="_self">
+                                        <i class="fa fa-times"></i>&nbsp;&nbsp;删除</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!-- /.Products Grid -->
+
+        </div>
+        <!-- /.Content -->
+
+    </div>
+</div>
+<!-- /.Main Container -->
+
+<!-- 新增书籍 -->
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">新增书籍</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <!-- 对号的动画效果 -->
+                   <!-- <i class="fa fa-check fa-3x mb-3 animated rotateIn"></i>-->
+                    <div class="col-md-12 col-xl-12">
+                        <form>
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <input type="text" id="name" class="form-control"></input>
+                                        <label for="name">书名</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <div class="md-form">
+                                        <div class="md-form">
+                                            <input type="text" id="language" class="form-control">
+                                            <label for="language" class="">语言</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <div class="md-form">
+                                        <div class="md-form">
+                                            <input type="text" id="degree" class="form-control">
+                                            <label for="degree" class="">难度系数</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <input type="text" id="cover" class="form-control"></input>
+                                        <label for="cover">封面地址</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <input type="text" id="download" class="form-control"></input>
+                                        <label for="download">下载地址</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <input type="text" id="buy" class="form-control"></input>
+                                        <label for="buy">购买地址</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <!--Grid row-->
+                            <div class="row">
+                                <!--Grid column-->
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="description" class="md-textarea form-control"
+                                                  rows="3"></textarea>
+                                        <label for="description">书籍描述</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-success waves-effect waves-light" onclick="submitBook()"
+                   data-dismiss="modal">
+                    <i class="fa fa-check ml-1"></i>
+                    确定
+                </a>
+                <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">
+                    <i class="fa fa-times l-1"></i>
+                    取消
+                </a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
+<!-- 返回顶部 -->
+<section>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-lg purple-gradient" style="display:none;" id="goTop">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </div>
+</section>
+
+<!-- 网站底部 -->
+<footer th:replace="~{common :: footer}"></footer>
+<!-- /网站底部 -->
+
+<!-- JQuery -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script src="https://cdn.bootcss.com/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    //Animation init
+    new WOW().init();
+
+    // 返回顶部
+    $(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 500) {
+                $("#goTop").fadeIn(200);
+            }
+            else {
+                $("#goTop").hide(200);
+            }
+        });
+        $("#goTop").click(function () {
+            $('html,body').animate({'scrollTop': 0}, 500);
+        });
+    });
+
+    function searchBook() {
+        var name = $('#bookName').val();
+        window.location.href="/book_search?name=" + name;
+    }
+
+    function addBook() {
+        $('#id').val('');
+        $('#name').val('');
+        $('#cover').val('');
+        $('#degree').val('');
+        $('#language').val('');
+        $('#download').val('');
+        $('#buy').val('');
+        $('#description').val('');
+    }
+    /**
+     * 用户修改图书信息
+     * onclick传递对象: th:onclick="'javascript:updateBook(\''+${book}+'\');'"
+     * updateBook(Book
+     *              (id=25,
+     *              cover=https://img12.360buyimg.com/n1/s200x200_jfs/t3388/358/1413961218/237200/a2967a63/58256380N773ffe78.jpg,
+     *              name=区块链技术指南,
+     *              download=https://share.weiyun.com/5fExR03,
+     *              buy=https://item.jd.com/12007317.html,
+     *              language=中文,
+     *              degree=4,
+     *              updateTime=Mon Apr 23 10:59:03 CST 2018,
+     *              description=null
+     *              )
+     *              );"
+     */
+    function updateBook(book){
+        book=book.substring(book.indexOf("(")+1,book.indexOf(")"));
+        book = book.replace(/ /g,'');
+        book = book.replace(/=/g,'":"');
+        book = book.replace(/,/g,'","');
+        book="{\""+book+"\"}";
+        book=JSON.parse(book);
+        console.log(book.name);
+        $('#id').val(book.id);
+        $('#name').val(book.name);
+        $('#cover').val(book.cover);
+        $('#degree').val(book.degree);
+        $('#language').val(book.language);
+        $('#download').val(book.download);
+        $('#buy').val(book.buy);
+        $('#description').val(book.description);
+    }
+    /**
+     * 用户提交书籍
+     */
+    function submitBook() {
+        var id = $("#id").val();
+        var name = $("#name").val();
+        var cover = $("#cover").val();
+        var language = $("#language").val();
+        var degree = $("#degree").val();
+        var download = $("#download").val();
+        var buy = $("#buy").val();
+        var description = $("#description").val();
+        if (name.trim().length === 0) {
+            toastr.error("请填写书名 ！");
+            return;
+        }
+        if (cover.trim().length === 0) {
+            toastr.error("请填写封面地址 ！");
+            return;
+        }
+        if (language.trim().length === 0) {
+            toastr.error("请填写书籍语言 ！");
+            return;
+        }
+        if (degree.trim().length === 0) {
+            toastr.error("请填写难度系数 ！");
+            return;
+        }
+        $.post("/book_save", {
+            name: name,
+            cover: cover,
+            language: language,
+            degree: degree,
+            download: download,
+            buy: buy,
+            description: description,
+            id: id
+        }, function (response) {
+            if (response.code === 0) {
+                $('#id').val('');
+                $('#name').val('');
+                $('#cover').val('');
+                $('#degree').val('');
+                $('#language').val('');
+                $('#download').val('');
+                $('#buy').val('');
+                $('#description').val('');
+                toastr.success("感谢您的分享，书籍已上架！");
+                var send=function () {
+                    window.location.reload();
+                };
+                setTimeout(send,3000);
+            } else {
+                toastr.error("发送失败，请用其他方式联系我们！");
+            }
+        });
+        return false;
+    }
+</script>
+
+</body>
+</html>

@@ -61,6 +61,9 @@ public class BookController {
      */
     @RequestMapping("/book_search")
     public String bookSearch(String name,Model model)throws Exception{
+        if (StringUtils.isEmpty(name)) {
+            return "redirect:/book/list";
+        }
         URLEncoder.encode(name,"utf-8");
         List<Book> books=bookRepository.findByNameLike(name);
         model.addAttribute("books", books);
