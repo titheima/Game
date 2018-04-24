@@ -1,12 +1,11 @@
 package com.anoyi.controller;
 
-import com.anoyi.bean.ArticleBean;
-import com.anoyi.bean.Comment;
-import com.anoyi.bean.JianshuBean;
-import com.anoyi.bean.ResponseBean;
+import com.anoyi.bean.*;
 import com.anoyi.controller.service.JianshuService;
+import com.anoyi.mongo.repository.BookRepository;
 import com.anoyi.mongo.service.CommentService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +39,7 @@ public class BlogController {
         return "blog";
     }
 
+    //所有文章列表
     @GetMapping("/blog/{page}")
     @ResponseBody
     public ResponseBean blog(@PathVariable("page") int page){
@@ -61,6 +61,7 @@ public class BlogController {
         return ResponseBean.success(jianshuBean);
     }
 
+    //分类
     @GetMapping("/nbs/{page}")
     @ResponseBody
     public ResponseBean notebooks(@PathVariable("page") int page){
@@ -89,4 +90,21 @@ public class BlogController {
         return ResponseBean.success(jianshuBean);
     }
 
+    /**
+     * **************************************后台管理功能****************************************
+     */
+
+    @GetMapping("/admin/blog/{page}")
+    @ResponseBody
+    public ResponseBean blog_admin(@PathVariable("page") int page){
+        JianshuBean jianshuBean = jianshuService.parseArticleList(page);
+        return ResponseBean.success(jianshuBean);
+    }
+
+    @GetMapping("/admin/blog")
+    public String blog_admin(Model model){
+        JianshuBean jianshuBean = jianshuService.parseUserAndBlogs();
+        model.addAttribute("jianshu", jianshuBean);
+        return "blog";
+    }
 }
