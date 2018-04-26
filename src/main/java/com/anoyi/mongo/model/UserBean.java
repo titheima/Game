@@ -116,4 +116,12 @@ public class UserBean implements Comparable<UserBean>{
     public void setJoinTime(Date joinTime) {
         this.joinTime = joinTime;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

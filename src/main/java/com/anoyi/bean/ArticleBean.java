@@ -1,6 +1,7 @@
 package com.anoyi.bean;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 /**
  * 简书文章
@@ -9,6 +10,7 @@ import lombok.Data;
 public class ArticleBean {
 
     // 文章ID
+    @Id
     private String articleId;
 
     // 文章标题
@@ -28,6 +30,27 @@ public class ArticleBean {
 
     // 正文内容
     private String content;
+
+    // 封面图
+    private String cover;
+
+    // 摘要
+    private String description;
+
+    // 时间
+    private String time;
+
+    // 喜欢数
+    private Integer likeCount;
+
+    // 用户ID
+    private String userId;
+
+    // 专题ID
+    private String ownCollectionId;
+
+    // 分类ID
+    private String notebookId;
 
     public String getArticleId() {
         return articleId;
@@ -83,5 +106,61 @@ public class ArticleBean {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getOwnCollectionId() {
+        return ownCollectionId;
+    }
+
+    public void setOwnCollectionId(String ownCollectionId) {
+        this.ownCollectionId = ownCollectionId;
+    }
+
+    public String getNotebookId() {
+        return notebookId;
+    }
+
+    public void setNotebookId(String notebookId) {
+        this.notebookId = notebookId;
     }
 }
