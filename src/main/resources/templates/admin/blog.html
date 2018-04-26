@@ -44,9 +44,9 @@
             <div class="row">
 
                 <!--Sidebar-->
-                <div class="col-lg-2 col-md-2 px-3">
+                <div class="col-lg-2 col-md-1 px-3">
                     <!--Author-->
-                    <section class="mb-4">
+                    <section class="mb-2">
                         <hr>
                         <p class="font-weight-bold dark-grey-text text-center spacing">
                             <strong th:text="${jianshu.author.nickname}"></strong>
@@ -95,7 +95,7 @@
                     </p>
                     <hr>
                     <!--Section: Recent posts-->
-                    <section class="section mb-5">
+                    <section class="section mb-2">
 
                         <!--/*@thymesVar id="jianshu" type="com.anoyi.controller.BlogController"*/-->
                         <div class="post-border" th:each="collection : ${jianshu.ownCollections}">
@@ -111,7 +111,7 @@
                                 <div class="col-7 mb-1">
                                     <div class="">
                                         <p class="mb-1">
-                                            <a th:href="'/c/' + ${collection.id}" class="text-hover font-weight-bold"
+                                            <a th:href="'/admin/c/' + ${collection.id}" class="text-hover font-weight-bold"
                                                th:text="${collection.title}"></a>
                                         </p>
                                     </div>
@@ -132,7 +132,7 @@
                                 <div class="col-7 mb-1">
                                     <div class="">
                                         <p class="mb-1">
-                                            <a v-bind:href="'/c/' + collection.id" class="text-hover font-weight-bold"
+                                            <a v-bind:href="'/admin/c/' + collection.id" class="text-hover font-weight-bold"
                                                v-html="collection.title"></a>
                                         </p>
                                     </div>
@@ -158,10 +158,8 @@
 
                     <!--Archive-->
                     <section class="archive mb-5">
-
                         <!--Grid row-->
                         <div class="row">
-
                             <!--Grid column-->
                             <div class="col-md-12 text-center">
 
@@ -169,7 +167,7 @@
                                 <ul class="list-unstyled  mt-3">
                                     <li th:each="notebook : ${jianshu.notebooks}">
                                         <h6 class="">
-                                            <a th:href="'/nb/' + ${notebook.id}" class="dark-grey-text"
+                                            <a th:href="'/admin/nb/' + ${notebook.id}" class="dark-grey-text"
                                                th:text="${notebook.name}"></a>
                                         </h6>
                                     </li>
@@ -187,16 +185,13 @@
                                     </li>
                                 </ul>
                                 <!--List-->
-
                             </div>
                             <!--Grid column-->
-
                         </div>
                         <!--Grid row-->
-
                     </section>
                     <!--Archive-->
-
+                    <a href="/admin/blog/crawl">获取最新文章</a>
                 </div>
                 <!--Sidebar-->
 

@@ -43,8 +43,6 @@ public class JianshuBean {
         // 个人介绍
         private String description;
 
-
-
         public String getNickname() {
             return nickname;
         }
@@ -83,6 +81,9 @@ public class JianshuBean {
         // ID
         @Id
         private String id;
+        private String authorId;
+        private String ownId;
+        private String noteBookId;
 
         // 封面图
         private String cover;
@@ -98,6 +99,12 @@ public class JianshuBean {
 
         // 喜欢数
         private Integer likeCount;
+
+        // 最后更新时间
+        private String updateTime;
+
+        // 字数
+        private String words;
 
         public String getId() {
             return id;
@@ -145,6 +152,46 @@ public class JianshuBean {
 
         public void setLikeCount(Integer likeCount) {
             this.likeCount = likeCount;
+        }
+
+        public String getAuthorId() {
+            return authorId;
+        }
+
+        public void setAuthorId(String authorId) {
+            this.authorId = authorId;
+        }
+
+        public String getOwnId() {
+            return ownId;
+        }
+
+        public void setOwnId(String ownId) {
+            this.ownId = ownId;
+        }
+
+        public String getNoteBookId() {
+            return noteBookId;
+        }
+
+        public void setNoteBookId(String noteBookId) {
+            this.noteBookId = noteBookId;
+        }
+
+        public String getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(String updateTime) {
+            this.updateTime = updateTime;
+        }
+
+        public String getWords() {
+            return words;
+        }
+
+        public void setWords(String words) {
+            this.words = words;
         }
     }
 
