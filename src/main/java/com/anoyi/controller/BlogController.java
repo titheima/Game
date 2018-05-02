@@ -12,10 +12,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -338,6 +341,22 @@ public class BlogController {
         }
         articleJianshuRepository.saveAll(articles);
         return ResponseBean.success(articles);
+    }
+
+    /**
+     * 根据文章标题或内容搜索文章
+     */
+    @RequestMapping("/admin/blog_search")
+    public String blogSearch(String title, Model model) throws Exception {
+        if (StringUtils.isEmpty(title)) {
+            return "redirect:/admin/blog";
+        }
+        URLEncoder.encode(title, "utf-8");
+        List<JianshuBean.Article> articles=articleJianshuRepository.findByTitleLike(title);
+        JianshuBean jianshuBean=new JianshuBean();
+        jianshuBean.setArticles(articles);
+        model.addAttribute("jianshu", jianshuBean);
+        return "admin/blog";
     }
 
 }

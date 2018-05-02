@@ -49,7 +49,7 @@
                             <td>
                                 <form class="form-inline" onsubmit="return false">
                                     <div class="form-group">
-                                        <input id="Name" type="text" class="form-control"
+                                        <input id="blogTitle" type="text" class="form-control"
                                                placeholder="请输入关键字以查找">
                                         <a class="btn blue-gradient btn-rounded btn-sm font-weight-normal"
                                            onclick="searchBlog()">
@@ -373,18 +373,17 @@
     }, 500), false);
 
     function searchBlog() {
-
+        var title = $('#blogTitle').val();
+        window.location.href = "/admin/blog_search?title=" + title;
     }
 
 
     function addBlog() {
         window.location.href = "/admin/edit";
     }
-    function updateBlog(article) {
+    function updateBlog(id) {
         //拿到id，到完整信息表中将详情查询出来
-
-        console.log(article)
-        //window.location.href = "/admin/edit";
+        window.location.href = "/admin/blog/edit/"+id;
     }
 
     // 博客列表
