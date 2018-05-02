@@ -50,7 +50,7 @@
                                     <form class="form-inline" onsubmit="return false">
                                         <div class="form-group">
                                             <input id="bookName" type="text" class="form-control"
-                                                       placeholder="请输入书名以查找">
+                                                   placeholder="请输入书名以查找">
                                             <a class="btn blue-gradient btn-rounded btn-sm font-weight-normal"
                                                onclick="searchBook()">
                                                 <i class="fa fa-search"></i>&nbsp;&nbsp;搜索</a>
@@ -180,8 +180,8 @@
                                 <!--Grid column-->
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <input type="hidden" id="id"></input>
-                                        <input type="text" id="name" class="form-control"></input>
+                                        <input type="hidden" id="id">
+                                        <input type="text" id="name" class="form-control">
                                         <label for="name">书名</label>
                                     </div>
                                 </div>
@@ -192,20 +192,16 @@
                                 <!--Grid column-->
                                 <div class="col-md-6">
                                     <div class="md-form">
-                                        <div class="md-form">
-                                            <input type="text" id="language" class="form-control">
-                                            <label for="language" class="">语言</label>
-                                        </div>
+                                        <input type="text" id="language" class="form-control">
+                                        <label for="language" class="">语言</label>
                                     </div>
                                 </div>
                                 <!--Grid column-->
                                 <!--Grid column-->
                                 <div class="col-md-6">
                                     <div class="md-form">
-                                        <div class="md-form">
-                                            <input type="text" id="degree" class="form-control">
-                                            <label for="degree" class="">难度系数</label>
-                                        </div>
+                                        <input type="text" id="degree" class="form-control">
+                                        <label for="degree" class="">难度系数</label>
                                     </div>
                                 </div>
                                 <!--Grid column-->
@@ -216,7 +212,7 @@
                                 <!--Grid column-->
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <input type="text" id="cover" class="form-control"></input>
+                                        <input type="text" id="cover" class="form-control">
                                         <label for="cover">封面地址</label>
                                     </div>
                                 </div>
@@ -227,7 +223,7 @@
                                 <!--Grid column-->
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <input type="text" id="download" class="form-control"></input>
+                                        <input type="text" id="download" class="form-control">
                                         <label for="download">下载地址</label>
                                     </div>
                                 </div>
@@ -238,7 +234,7 @@
                                 <!--Grid column-->
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <input type="text" id="buy" class="form-control"></input>
+                                        <input type="text" id="buy" class="form-control">
                                         <label for="buy">购买地址</label>
                                     </div>
                                 </div>
@@ -356,6 +352,8 @@
         book = book.replace(/,/g, '","');
         book = "{\"" + book + "\"}";
         book = JSON.parse(book);
+        $('#shareModal label').css({"transform": "translateY(-140%)", "font-size": "12px"});
+
         $('#id').val(book.id);
         $('#name').val(book.name);
         $('#cover').val(book.cover);
@@ -371,7 +369,6 @@
     function submitBook() {
         var id = $("#id").val();
         var name = $("#name").val();
-        console.log(name);
         var cover = $("#cover").val();
         var language = $("#language").val();
         var degree = $("#degree").val();
