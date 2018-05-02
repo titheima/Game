@@ -15,7 +15,7 @@
     <link href="/css/mdb.css" rel="stylesheet">
     <link href="/css/home.css" rel="stylesheet">
     <style>
-        .row table td{
+        .row table td {
             padding: 5px;
             margin: 0px;
             vertical-align: middle;
@@ -39,8 +39,33 @@
 
     <!--Blog-->
     <section>
+
         <div class="container mt-5 pt-3">
 
+            <header style="height: 100%;padding-top: 30px;">
+                <div align="left">
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <form class="form-inline" onsubmit="return false">
+                                    <div class="form-group">
+                                        <input id="Name" type="text" class="form-control"
+                                               placeholder="请输入关键字以查找">
+                                        <a class="btn blue-gradient btn-rounded btn-sm font-weight-normal"
+                                           onclick="searchBlog()">
+                                            <i class="fa fa-search"></i>&nbsp;&nbsp;搜索</a>
+                                    </div>
+                                </form>
+                            </td>
+                            <td align="middle">
+                                <a class="btn pink-gradient btn-rounded btn-sm font-weight-normal"
+                                   target="_blank" onclick="addBlog()">
+                                    <i class="fa fa-plus-square"></i>&nbsp;&nbsp;新增文章</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </header>
             <div class="row">
 
                 <!--Sidebar-->
@@ -54,7 +79,8 @@
                         <hr>
                         <!--Avatar-->
                         <div class="d-flex justify-content-center mt-4">
-                            <img th:src="${jianshu.author.avatar}" class="img-fluid rounded img-author z-depth-1" style="width: 80px;height: 80px;">
+                            <img th:src="${jianshu.author.avatar}" class="img-fluid rounded img-author z-depth-1"
+                                 style="width: 80px;height: 80px;">
                         </div>
                         <!--Description-->
                         <p class="mt-3 dark-grey-text font-small text-center">
@@ -111,7 +137,8 @@
                                 <div class="col-7 mb-1">
                                     <div class="">
                                         <p class="mb-1">
-                                            <a th:href="'/admin/c/' + ${collection.id}" class="text-hover font-weight-bold"
+                                            <a th:href="'/admin/c/' + ${collection.id}"
+                                               class="text-hover font-weight-bold"
                                                th:text="${collection.title}"></a>
                                         </p>
                                     </div>
@@ -132,7 +159,8 @@
                                 <div class="col-7 mb-1">
                                     <div class="">
                                         <p class="mb-1">
-                                            <a v-bind:href="'/admin/c/' + collection.id" class="text-hover font-weight-bold"
+                                            <a v-bind:href="'/admin/c/' + collection.id"
+                                               class="text-hover font-weight-bold"
                                                v-html="collection.title"></a>
                                         </p>
                                     </div>
@@ -191,7 +219,7 @@
                         <!--Grid row-->
                     </section>
                     <!--Archive-->
-                    <a href="/admin/blog/crawl">获取最新文章</a>
+                    <a href="/admin/blog/crawl">获取最新文章，爬爬爬。。。</a>
                 </div>
                 <!--Sidebar-->
 
@@ -226,7 +254,7 @@
                                         </td>
                                         <td style="width: 15%; text-align: center;vertical-align: middle;">
                                             <a class="btn blue-gradient btn-rounded btn-sm font-weight-normal"
-                                               th:href="'/p/' + ${article.id}" target="_blank">
+                                               th:onclick="'javascript:updateBlog(\''+${article.id}+'\');'" target="_blank">
                                                 <i class="fa fa-edit"></i>&nbsp;修改</a>
                                         </td>
                                     </tr>
@@ -238,9 +266,9 @@
                                         <td>
                                             <a href="" class="dark-grey-text" v-html="article.description"></a>
                                         </td>
-                                        <td style="width: 15%;">
+                                        <td style="width: 15%; text-align: center;vertical-align: middle;">
                                             <a class="btn blue-gradient btn-rounded btn-sm font-weight-normal"
-                                               v-bind:href="'/p/' + article.id" target="_blank">
+                                               v-bind:href="'javascript:updateBlog(\''+article.id+'\');'" target="_blank">
                                                 <i class="fa fa-edit"></i>&nbsp;修改</a>
                                         </td>
                                     </tr>
@@ -343,6 +371,21 @@
             }
         }
     }, 500), false);
+
+    function searchBlog() {
+
+    }
+
+
+    function addBlog() {
+        window.location.href = "/admin/edit";
+    }
+    function updateBlog(article) {
+        //拿到id，到完整信息表中将详情查询出来
+
+        console.log(article)
+        //window.location.href = "/admin/edit";
+    }
 
     // 博客列表
     var app = new Vue({
