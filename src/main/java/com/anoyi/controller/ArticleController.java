@@ -45,7 +45,6 @@ public class ArticleController {
     @PostMapping("/admin/article_save")
     @ResponseBody
     public ResponseBean articleSave(ArticleBean articleBean) {
-        System.out.println(articleBean);
         articleBean.setUpdateTime(new Date().toString());
 
         if (articleBean.getContent().length() > 80) {

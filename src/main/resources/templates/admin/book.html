@@ -375,6 +375,8 @@
         var download = $("#download").val();
         var buy = $("#buy").val();
         var description = $("#description").val();
+        //将回车去掉,换成<br>
+        description = description.replace(/[\r\n]/g, "");
         if (name.trim().length === 0) {
             toastr.error("请填写书名 ！");
             return;
@@ -402,6 +404,7 @@
             id: id
         }, function (response) {
             if (response.code === 0) {
+                //重置表单
                 $('#id').val(0);
                 $('#name').val('');
                 $('#cover').val('');

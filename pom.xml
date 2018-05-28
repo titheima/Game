@@ -134,6 +134,7 @@
     </repositories>
 
     <build>
+        <finalName>im</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
