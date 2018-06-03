@@ -45,7 +45,10 @@
                     <a class="btn pink-gradient btn-rounded btn-sm font-weight-bold" href="/login" data-offset="90">登录/注册</a>
                 </li>
                 <li class="nav-item ml-3" th:if="${#httpServletRequest.remoteUser}">
-                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-bold" href="/login" data-offset="90">退出登录</a>
+                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-bold" href="/logout" data-offset="90">退出登录</a>
+                </li>
+                <li class="nav-item ml-3" th:if="${#httpServletRequest.remoteUser=='admin'}">
+                    <a class="btn pink-gradient btn-rounded btn-sm font-weight-bold" href="/admin" data-offset="90">后台管理</a>
                 </li>
             </ul>
         </div>

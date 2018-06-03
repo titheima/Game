@@ -29,4 +29,21 @@ public class PageController {
         return "login";
     }
 
+    /**
+     * 跳转到后台仪表盘页
+     * @return
+     */
+    @GetMapping("/admin")
+    public String dashboards() {
+        return "admin/dashboards";
+    }
+    /**
+     * 跳转到后台仪表盘页
+     * @return
+     */
+    @GetMapping("/error")
+    public String error() {
+        return "error";
+    }
+
 }

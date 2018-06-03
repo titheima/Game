@@ -25,11 +25,27 @@ public class AnyUserDetailsService implements UserDetailsService {
         if (userBean == null) {
             throw new UsernameNotFoundException("username:" + username);
         }
-        return createUserPrincipal(userBean);
+        UserDetails userPrincipal = createUserPrincipal(userBean);
+        return userPrincipal;
     }
 
+
+    /**
+     *
+     * @param userBean
+     * @return
+     *
+     * 如果是admin用户就给一个admin的角色
+     */
     private UserDetails createUserPrincipal(UserBean userBean){
         // 用户认证（用户名，密码，权限）
+        if ("admin".equalsIgnoreCase(userBean.getUsername())) {
+            return org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder()
+                    .username(userBean.getUsername())
+                    .password(userBean.getPassword())
+                    .roles("admin").build();
+        }
+
         return org.springframework.security.core.userdetails.User.withDefaultPasswordEncoder()
                 .username(userBean.getUsername())
                 .password(userBean.getPassword())

@@ -4,7 +4,7 @@ server:
 spring:
   data:
     mongodb:
-      host: 39.108.88.195     # mongo 地址 39.108.88.195 localhost
+      host: localhost     # mongo 地址 39.108.88.195 localhost
       port: 27017         # mongo 端口号
       database: local
 #      authentication-database: admin   # 验证数据库
