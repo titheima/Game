@@ -159,6 +159,7 @@
                                     <div class="text-center my-4">
                                         <button class="btn pink-gradient" @click="onRegisterClick">确定注册</button>
                                         <button class="btn pink-gradient" @click="onLoginClick">返回登录</button>
+                                        <!--<button class="btn pink-gradient" @click="IsPC">什么客户端</button>-->
                                     </div>
 
                                 </div>
@@ -210,6 +211,16 @@
                 $("#password").val('');
                 $("#signInDiv").hide(300);
                 $("#loginDiv").show(300);
+            },
+            IsPC:function (){
+                var userAgentInfo = navigator.userAgent;
+                var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+                var flag = true;
+                for (var v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+                }
+                console.log(flag)
+                return flag;
             },
             onRegisterClick: function () {
                 var username = $("#sign-username").val();
