@@ -11,10 +11,10 @@ spring:
  #     username: admin                  # 用户名
  #     password: admin                  # 密码
   thymeleaf:
-    cache: false
-    cache-period: 0
+    cache: true
+    cache-period: 2592000
   template:
-    cache: false
+    cache: true
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%15.15t] %-40.40c{1.} [%X{user}] : %m%n%xwEx"

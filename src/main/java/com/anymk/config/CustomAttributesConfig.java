@@ -38,4 +38,7 @@ public class CustomAttributesConfig {
     // 打赏描述
     private String rewardDesc="原创不易,请支持一下吧";
 
+    // 暗号
+ 	private String secret="123456";
+
 }
