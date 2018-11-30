@@ -1,6 +1,5 @@
 package com.anymk.controller;
 
-import com.anymk.bean.Book;
 import com.anymk.bean.CNCFProject;
 import com.anymk.mongo.repository.CNCFProjectRepository;
 import com.anymk.tools.IdWorker;
@@ -9,16 +8,13 @@ import lombok.extern.log4j.Log4j2;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,7 +43,7 @@ public class CNCFController {
     private Integer datacenterId;*/
 
     //爬取项目
-    @GetMapping("/admin/project_crawl")
+    @GetMapping("/admin2/project_crawl")
     public String projectCrawl() {
         // IdWorker idWorker = new IdWorker(workerId, datacenterId);
         IdWorker idWorker = new IdWorker(0, 1);

@@ -1,14 +1,14 @@
 ####更新记录
 -下一步计划
 
-为mongodb远程访问加入密码
-完善后台的首页监控功能,可查看当前虚拟机运行情况,当前登录用户,mongodb概略情况...
+为MongoDB远程访问加入密码
+完善后台的首页监控功能,可查看当前虚拟机运行情况,当前登录用户,MongoDB概略情况...SpringBoot监控
 网站流量统计分析系统 友盟
 极光 推送
 分享插件: JiaThis  百度分享
 
-
-添加工程简介功能,开发中...
+添加SpringBoot监控:已完成
+添加工程简介功能:已完成
 添加暗号页面,登录后可跳转到关于页,可以自己决定是直接简历还是使用暗号显示
 添加最牛程序员简历到关于页面:已嵌入
 退出登录后页面跳转不完美,依然显示退出登录按钮:已完成
@@ -36,6 +36,30 @@
 **1、运行服务【IDEA 方式】**
 
 启动 MongoDB，并在 `application.yml` 中配置， 运行 Application 即可启动应用
+
+
+Windows中备份MongoDB
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongodump.exe -d local
+
+Linux中恢复
+
+mongorestore -d local --drop dump/local/
+
+CentOS7中远程访问的配置跟6略有不同
+
+vi /etc/mongod.conf
+
+    将bindIp: 127.0.0.1改为bindIp: 0.0.0.0;网上很多攻略说是bind_ip,不过这都不是问题
+
+修改完毕后重启mongodb的服务
+
+     systemctl restart mongod  
+
+ 启动:systemctl start mongod
+
+ 关闭 systemctl stop mongod  
+ 
 
 **2、运行服务【Maven 方式】**
 

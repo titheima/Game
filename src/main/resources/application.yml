@@ -11,14 +11,26 @@ spring:
  #     username: admin                  # 用户名
  #     password: admin                  # 密码
   thymeleaf:
-    cache: true
-    cache-period: 2592000
+    cache: false
+    cache-period: 0
   template:
-    cache: true
+    cache: false
 logging:
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%15.15t] %-40.40c{1.} [%X{user}] : %m%n%xwEx"
+      console: "[%X{user}] : %m%n%xwEx"
+#    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%15.15t] %-40.40c{1.} [%X{user}] : %m%n%xwEx"
 
 # 简书配置
 jianshu:
   user-id: 7b7ec6f2db21
+
+#健康监控
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+#  endpoints:
+#    web:
+#      base-path: /admin/info
+#      exposure:
+#        include: '*'
